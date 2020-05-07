@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from math import gcd
-from random import choice
 
 words = {3: 'fizz', 5: 'buzz'}
 
