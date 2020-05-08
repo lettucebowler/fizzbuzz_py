@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from math import gcd
 
+# Add entries here to check more numbers
 words = {3: 'fizz', 5: 'buzz'}
 
 # Calculate lcm of numbers to check. Used to determine length of pattern.
