@@ -9,8 +9,6 @@ LESS = False
 # Add entries here to check more numbers
 mod_dict = {3: 'Fizz', 5: 'Buzz'}
 less_dict = {10: 'Bazz'}
-
-
 range_list = []
 
 # Calculate lcm of numbers to check. Used to determine length of pattern.
