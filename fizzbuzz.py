@@ -13,8 +13,9 @@ def fizzbuzz(n, states):
 
 # List of lambda functions to test conditions
 triggers = [lambda x: 'Fizz' if x % 3 == 0 else None,
-            lambda x: 'Buzz' if x % 5 == 0 else None,
-            lambda x: 'Bazz' if x < 10 else None]
+            lambda x: 'Buzz' if x % 5 == 0 else None
+            ]
 
+# Driver program
 for n in range(1, 100 + 1):
     print(''.join(fizzbuzz(n, triggers)))
