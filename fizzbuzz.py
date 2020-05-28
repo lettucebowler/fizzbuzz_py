@@ -6,23 +6,15 @@ from math import gcd
 # output: list of conditions met, or [n] if none
 def fizzbuzz(n, states):
     output = [str(n)]
-    output.extend([text for divisor, text in states if n % divisor == 0])
-
+    output.extend([condition(n) for condition in states if condition(n) != None])
     if len(output) > 1:
         output = output[1:]
     return output
 
-# Add entries here to check more numbers
-# conditions = {3: 'Fizz', 5: 'Buzz'}
-conditions = [(3, 'Fizz'), (5, 'Buzz')]
+# List of lambda functions to test conditions
+triggers = [lambda x: 'Fizz' if x % 3 == 0 else None,
+            lambda x: 'Buzz' if x % 5 == 0 else None,
+            lambda x: 'Bazz' if x < 10 else None]
 
-# Calculate lcm of numbers to check. Used to determine length of pattern.
-if len(conditions) > 0:
-    divisors = [divisor for divisor, text in conditions]
-    lcm = divisors[0]
-    for i in divisors[1:]:
-        lcm = int(lcm*i/gcd(lcm, i))
-
-# Run program until all possible conditions have been met
-for n in range(1, lcm + 1):
-    print(''.join(fizzbuzz(n, conditions)))
+for n in range(1, 100 + 1):
+    print(''.join(fizzbuzz(n, triggers)))
