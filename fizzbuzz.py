@@ -22,4 +22,3 @@ for n in range(1, 100 + 1):
     output_buffer = ['{}: '.format(n)]
     output_buffer.extend(fizzbuzz(n, triggers))
     print(''.join(output_buffer))
-    # print(''.join(fizzbuzz(n, triggers)))
