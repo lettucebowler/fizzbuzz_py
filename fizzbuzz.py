@@ -6,7 +6,6 @@ from math import gcd
 # output: list of conditions met, or [n] if none
 def fizzbuzz(n, states):
     output = [str(n)]
-    # output.extend([condition(n) for condition in states if condition(n) != None])
     output.extend([text for text, condition in states if condition(n)])
     if len(output) > 1:
         output = output[1:]
