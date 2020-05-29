@@ -6,16 +6,21 @@ from math import gcd
 # output: list of conditions met, or [n] if none
 def fizzbuzz(n, states):
     output = [str(n)]
-    output.extend([condition(n) for condition in states if condition(n) != None])
+    # output.extend([condition(n) for condition in states if condition(n) != None])
+    output.extend([text for text, condition in states if condition(n)])
     if len(output) > 1:
         output = output[1:]
     return output
 
-# List of lambda functions to test conditions
-triggers = [lambda x: 'Fizz' if x % 3 == 0 else None,
-            lambda x: 'Buzz' if x % 5 == 0 else None
+# Array of outputs and their associated conditions
+triggers = [
+            ['Fizz', lambda x: x % 3 == 0],
+            ['Buzz', lambda x: x % 5 == 0]
             ]
 
 # Driver program
 for n in range(1, 100 + 1):
-    print(''.join(fizzbuzz(n, triggers)))
+    output_buffer = ['{}: '.format(n)]
+    output_buffer.extend(fizzbuzz(n, triggers))
+    print(''.join(output_buffer))
+    # print(''.join(fizzbuzz(n, triggers)))
