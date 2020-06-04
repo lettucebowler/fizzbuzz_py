@@ -12,10 +12,8 @@ def fizzbuzz(n, states):
     return output
 
 # Array of outputs and their associated conditions
-triggers = [
-            ['Fizz', lambda x: x % 3 == 0],
-            ['Buzz', lambda x: x % 5 == 0]
-            ]
+triggers = [['Fizz', lambda x: x % 3 == 0],
+            ['Buzz', lambda x: x % 5 == 0]]
 
 # Driver program
 for n in range(1, 100 + 1):
